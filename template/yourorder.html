@@ -1,0 +1,160 @@
+<title>Your Order</title>
+<link rel="stylesheet" href="/static/general.css">
+<link rel="stylesheet" href="/static/orders.css">
+<link rel="stylesheet" href="/static/style.css">
+
+<div class="container">
+  <div class="navbar">
+    <div class="logo">
+      <img src="../static/AttireHillLogo/logo.jpg" width="125px">
+    </div>
+    <nav>
+      <ul id="MenuItems">
+        <li><a href="/home">Home</a></li>
+            <li><a href="/Products">Products</a></li>
+            <li><a href="/yourorder">Orders</a></li>
+            <li><a href="/contact">Contact</a></li>
+            {% if request.session.user_id %}
+            <li><a href="/login">Logout</a></li>
+            {% else %}
+            <li><a href="/registration">Registration</a></li>
+            {% endif %}
+      </ul>
+    </nav>
+    <a href="/Shoppingcart"><img src="../static/images/cart.png" width="30px" height="30px"></a>
+    <img src="../static/images/menu.png" class="menu-icon" onclick="menutoggle()">
+  </div>
+</div>
+
+
+
+<div class="main">
+  <div class="page-title">Your Orders</div>
+
+  <div class="orders-grid">
+    <div class="order-container">
+
+      <div class="order-header">
+        <div class="order-header-left-section">
+          <div class="order-date">
+            <div class="order-header-label">Order Placed:</div>
+            <div>August 12</div>
+          </div>
+          <div class="order-total">
+            <div class="order-header-label">Total:</div>
+            <div>$35.06</div>
+          </div>
+        </div>
+
+        <div class="order-header-right-section">
+          <div class="order-header-label">Order ID:</div>
+          <div>27cba69d-4c3d-4098-b42d-ac7fa62b7664</div>
+        </div>
+      </div>
+
+      <div class="order-details-grid">
+        <div class="product-image-container">
+          <img src="/static/ordersImages/order1.jpg">
+        </div>
+
+        <div class="product-details">
+          <div class="product-name">
+            Button Up Drop Shoulder Shirt With Shorts
+          </div>
+          <div class="product-delivery-date">
+            Arriving on: August 15
+          </div>
+          <div class="product-quantity">
+            Quantity: 1
+          </div>
+          <button class="buy-again-button button-primary">
+            <img class="buy-again-icon" src="/static/ordersImages/buy-again-icon.png">
+            <span class="buy-again-message">Buy it again</span>
+          </button>
+        </div>
+
+        <div class="product-actions">
+          <a href="/tracking1">
+            <button class="track-package-button button-secondary">
+              Track package
+            </button>
+          </a>
+        </div>
+
+        <div class="product-image-container">
+          <img src="/static/ordersImages/order2.jpg">
+        </div>
+
+        <div class="product-details">
+          <div class="product-name">
+            Knit Chunky Pullover Short Sweater Dress
+          </div>
+          <div class="product-delivery-date">
+            Arriving on: August 19
+          </div>
+          <div class="product-quantity">
+            Quantity: 2
+          </div>
+          <button class="buy-again-button button-primary">
+            <img class="buy-again-icon" src="/static/ordersImages/buy-again-icon.png">
+            <span class="buy-again-message">Buy it again</span>
+          </button>
+        </div>
+
+        <div class="product-actions">
+          <a href="/tracking2">
+            <button class="track-package-button button-secondary">
+              Track package
+            </button>
+          </a>
+        </div>
+      </div>
+
+      <div class="order-header">
+        <div class="order-header-left-section">
+          <div class="order-date">
+            <div class="order-header-label">Order Placed:</div>
+            <div>June 10</div>
+          </div>
+          <div class="order-total">
+            <div class="order-header-label">Total:</div>
+            <div>$41.90</div>
+          </div>
+        </div>
+
+        <div class="order-header-right-section">
+          <div class="order-header-label">Order ID:</div>
+          <div>b6b6c212-d30e-4d4a-805d-90b52ce6b37d</div>
+        </div>
+      </div>
+
+      <div class="order-details-grid">
+        <div class="product-image-container">
+          <img src="/static/ordersImages/order3.jpg">
+        </div>
+
+        <div class="product-details">
+          <div class="product-name">
+            Puff-Sleeve Cotton Mini Dress
+          </div>
+          <div class="product-delivery-date">
+            Arriving on: June 17
+          </div>
+          <div class="product-quantity">
+            Quantity: 2
+          </div>
+          <button class="buy-again-button button-primary">
+            <img class="buy-again-icon" src="/static/ordersImages/buy-again-icon.png">
+            <span class="buy-again-message">Buy it again</span>
+          </button>
+        </div>
+
+        <div class="product-actions">
+          <a href="/tracking3">
+            <button class="track-package-button button-secondary">
+              Track package-
+            </button>
+          </a>
+        </div>
+      </div>
+    </div>

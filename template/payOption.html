@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Choose Payment Option: </title>
+  <link rel="stylesheet" href="/static/payOption.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+  <div class="container">
+    <div class="title">
+      <h4>Select a <span style="color: rgb(96, 100, 182);">Payment </span>method</h4>
+    </div>
+    <form action="">
+      <input type="radio" name="payment" id="upi">
+      <input type="radio" name="payment" id="atm">
+      <input type="radio" name="payment" id="paypal">
+      <input type="radio" name="payment" id="cash">
+
+      <div class="category">
+        <!-- UPI -->
+        <label for="upi" class="upiMethod">
+          <div class="imgName">
+            <div class="imgContainer upi">
+              <img src="/static/images/UPI.png">
+            </div>
+            <a class="gateway" href="/upiId"><span class="name">UPI</span></a>
+          </div>
+          <a href="/upiId"><span class="check"><i class="fa-regular fa-circle-check"
+                style="color: #6064b6;"></i></span></a>
+        </label>
+        <!-- ATM -->
+        <label for="atm" class="atmMethod">
+          <div class="imgName">
+            <div class="imgContainer atm">
+              <img src="/static/images/ATM.png">
+            </div>
+            <a class="gateway" href="/payGateway"><span class="name">Credit / Debit / Atm Card</span></a>
+          </div>
+          <a class="gateway" href="/payGateway"><span class="check"><i class="fa-regular fa-circle-check"
+                style="color: #6064b6;"></i></span></a>
+        </label>
+        <!-- PAYPAL -->
+        <label for="paypal" class="paypalMethod">
+          <div class="imgName">
+            <div class="imgContainer paypal">
+              <img src="/static/images/paypal.png">
+            </div>
+            <a class="gateway" href="/payGateway"><span class="name">Paypal</span></a>
+          </div>
+          <a class="gateway" href="/payGateway"><span class="check"><i class="fa-regular fa-circle-check"
+                style="color: #6064b6;"></i></span></a>
+        </label>
+        <!-- CASH -->
+        <label for="cash" class="cashMethod">
+          <div class="imgName">
+            <div class="imgContainer cash">
+              <img src="/static/images/cash.png">
+            </div>
+            <span class="name" onclick="alert('Order Placed')"><a href="/Products">Cash on Delivery</span>
+          </div>
+          <span class="check" onclick="alert('Order Placed')"><i class="fa-regular fa-circle-check"
+              style="color: #6064b6;"></i></span>
+        </label>
+      </div>
+    </form>
+  </div>
+</body>
+
+</html>

@@ -1,0 +1,49 @@
+
+{% if messages %}
+{% for message in messages %}
+
+<div class="alert notice alert-{% if message.tags %}{{ message.tags }}{% endif %}" role="alert">
+<span class="alertText">{{message}}</span>
+</div>
+{% endfor %}
+{% endif %}   
+
+<style>
+    .alert {
+        position: relative;
+        top: 10;
+        left: 0;
+        width: auto;
+        height: auto;
+        padding: 10px;
+        margin: 10px;
+        line-height: 1.8;
+        border-radius: 5px;
+        cursor: hand;
+        cursor: pointer;
+        font-family: sans-serif;
+        font-weight: 400;
+      }
+      .alertText {
+        display: table;
+        margin: 0 auto;
+        text-align: center;
+        font-size: 16px;
+      }
+      .notice {
+        background-color: #EFF;
+        border: 1px solid #DEE;
+        color: #9AA;
+      }
+      .alertClose {
+        float: right;
+        padding-top: 5px;
+        font-size: 10px;
+      }
+      
+      .clear {
+        clear: both;
+      }
+</style>
+
+  

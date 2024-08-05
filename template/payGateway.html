@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Payment Gateway</title>
+  <link rel="stylesheet" href="/static/pay.css">
+  <style>
+    input[type=number]::-webkit-inner-spin-button,
+    input[type=number]::-webkit-outer-spin-button {
+      -webkit-appearance: none;
+      margin: 0;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <form action="">
+      <div class="column">
+        <h3 class="title">Payment</h3>
+
+        <div class="input-box">
+          <span>CardHolder Name:</span>
+          <input type="text" placeholder="Ms. jelly D'Souza" required>
+        </div>
+        <div class="input-box">
+          <span>Card Number :</span>
+          <input type="number" placeholder="111 222 333" required>
+        </div>
+        <div class="input-box">
+          <span>Exp. Month :</span>
+          <input type="text" placeholder="July" required>
+        </div>
+
+        <div class="flex">
+          <div class="input-box">
+            <span>Exp. Year :</span>
+            <input type="number" placeholder="2030" required>
+          </div>
+          <div class="input-box">
+            <span>CVV :</span>
+            <input type="number" placeholder="123" required>
+          </div>
+        </form>
+        </div>
+        <button class="btn" onclick="alert('Paid Successfully')"><a href="/Products">Make Payment</button>
+      </div>
+    
+     
+   
+  </div>
+</body>
+
+</html>

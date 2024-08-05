@@ -1,0 +1,111 @@
+
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Contact</title>
+  <link rel="stylesheet" href="/static/contact.css">
+  <link rel="stylesheet" href="/static/style.css">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <style>
+    .navbar {
+      background: #c07187e7;
+    }
+    .btn1{
+      width:100px;
+      height:30px;
+      padding-left: 0px;
+      padding-bottom: 10px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="navbar">
+    <div class="logo">
+      <a href="/home"><img src="../static/AttireHillLogo/contact_page_logo.png" width="125px"></a>
+    </div>
+    <nav>
+      <ul id="MenuItems">
+        <li><a href="/home">Home</a></li>
+        <li><a href="/Products">Products</a></li>
+        <li><a href="/contact">Contact</a></li>
+        {% if request.session.user_id %}
+        <li><a href="/login">Logout</a></li>
+        {% else %}
+        <li><a href="/registration">Registration</a></li>
+        {% endif %}
+      </ul>
+    </nav>
+    <a href="/Shoppingcart"><img src="/static/images/cart.png" width="30px" height="30px"></a>
+    <img src="/static/images/menu.png" class="menu-icon" onclick="menutoggle()">
+  </div>
+
+
+  <section class="contact">
+    <div class="content">
+      {% include "alert.html" %}
+     
+      <h2>Contact Us </h2>
+      <p>For any inquiries or assistance, please don't hesitate to contact us. Our team is dedicated to providing
+        exceptional
+        service and will promptly address your needs. Feel free to reach out through the form below, and we'll be in
+        touch
+        shortly.</p>
+    </div>
+    <br><br>
+    <div class="container">
+      <div class="contactForm">
+        <form method="post" action="contact">
+          {% csrf_token %}
+          <h2>Send Messages</h2>
+          <div class="inputBox">
+            <input type="text" name="name" required="required">
+            <span>Full Name</span>
+          </div>
+          <div class="inputBox">
+            <input type="email" name="email" required="required">
+            <span>Email</span>
+          </div>
+          <div class="inputBox">
+            <textarea required="required" name="message"></textarea>
+            <span>Type Your Message..</span>
+          </div>
+          <div >
+            <button class="btn1">Send</button>
+          </div>
+          
+        </form>
+      </div>
+
+      <div class="contactInfo">
+        <div class="box">
+          <div class="icon"><i class="fa-solid fa-location-dot"></i></i></div>
+          <div class="text">
+            <h3>Address</h3>
+            <p>Mumbai,<br>400001</p>
+          </div>
+        </div>
+
+        <div class="box">
+          <div class="icon"><i class="fa-solid fa-phone"></i></div>
+          <div class="text">
+            <h3>Phone</h3>
+            <p>458-568-125</p>
+          </div>
+        </div>
+
+        <div class="box">
+          <div class="icon"><i class="fa-solid fa-envelope"></i></div>
+          <div class="text">
+            <h3>Email</h3>
+            <p>attirehill9@gmail.com</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</body>
+
+</html>

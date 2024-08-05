@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Billing-Address</title>
+  <link rel="stylesheet" href="/static/billing.css">
+  <style>
+    input[type=number]::-webkit-inner-spin-button, 
+   input[type=number]::-webkit-outer-spin-button { 
+     -webkit-appearance: none; 
+   margin: 0; 
+}
+  </style>
+</head>
+
+<body>
+  {% include "alert.html" %}
+  <div class="container">
+    <form method="post" action="Billing-Address">
+      {% csrf_token %}
+      <div class="row">
+        <div class="column">
+          <h3 class="title">Billing Address</h3>
+          <div class="input-box">
+            <span>Full Name :</span>
+            <input type="text" placeholder="John Adien" name="name" required="required" >
+          </div>
+          <div class="input-box">
+            <span>Phone No :</span>
+            <input type="tel" placeholder="Phone No." name="phone" required="required">
+          </div>
+          <div class="input-box">
+            <span>Email :</span>
+            <input type="email" placeholder="example@example.com" name="email" required="required">
+          </div>
+          <div class="input-box">
+            <span>Address :</span>
+            <input type="text" placeholder="FlatNo - Street - LandMark" name="address" required="required" >
+          </div>
+          <div class="input-box">
+            <span>City :</span>
+            <input type="text" placeholder="Delhi" name="city" required="required">
+          </div>
+
+          <div class="flex">
+            <div class="input-box">
+              <span>State:</span>
+              <input type="text" placeholder="Maharashtra" name="state" required="required" >
+            </div>
+          <div class="input-box">
+              <span>Zip Code :</span>
+              <input type="number" placeholder="123 456" name="code" required="required">
+            </div> 
+          </div>
+        </div>
+      </div>
+      <button class="btn">Submit</button>
+      
+     
+      <div class="btn1-container">
+        <button class="btn1"><a href="payOption" class="paylink">PAY NOW</a></button>
+      </div>
+    </form>
+    
+  </div>
+</body>
+
+</html>

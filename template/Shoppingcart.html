@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Shopping Cart</title>
+    <link rel="stylesheet" href="/static/style.css" />
+    <style>
+    .button {
+        font-size:16px;
+        padding:10px 20px;
+        width:50px;
+        height:30px;
+    }
+    th {
+      text-align:center;
+      padding:4px;
+      color: #fff;
+      background:#434d7e;
+      font-weight:normal;
+    }
+    td a {
+      color: #265053;
+      font-size:12px;
+    }
+    .remove1{
+      text-align: center;
+      size:30px;
+    }
+    .checkout{
+      position: absolute;
+      top: 0;
+      right: 0;
+      background-color: #434d7e;
+      color: white;
+      border-radius: 5px;
+      padding: 5px 5px;
+    }
+    .container {
+      position: relative;
+  }
+  
+    </style>
+  </head>
+
+  <body>
+    
+    {% load cart %}
+    <div class="container">
+    <div class="navbar">
+    <div class="logo">
+    <img src="../static/AttireHillLogo/logo.jpg" width="125px" />
+    </div>
+    <nav>
+    <ul id="MenuItems">
+    <li>
+    <a href="/home">Home</a>
+    </li>
+    <li>
+              <a href="/Products">Products</a>
+            </li>
+            <li>
+              <a href="/contact">Contact</a>
+            </li>
+            {% if request.session.user_id %}
+              <li>
+              <a href="/login">Logout</a>
+              </li>
+            {% else %}
+              <li>
+                <a href="/registration">Registration</a>
+              </li>
+            {% endif %}
+          </ul>
+        </nav>
+        <a href="/Shoppingcart"><img src="../static/images/cart.png" width="30px" height="30px" /></a>
+        <img src="../static/images/menu.png" class="menu-icon" onclick="menutoggle()" />
+      </div>
+    </div>
+    
+  
+    
+    <div class="small-container cart-page">
+      <table>
+        <tr>
+          <th>Product</th>
+          <th>Quantity</th>
+          <th>Price</th>
+        </tr>
+        
+        {% for product in products %}
+          <tr>
+            <td>
+              <div class="cart-info">
+                <img src="{{ product.image.url }}" />
+                <div>
+                  <p>{{ product.name }}</p>
+                  <br>
+                  <p>Rs.{{ product.price }}/item</p>
+                  
+                   <form action="/Shoppingcart" method="post">
+                    {% csrf_token %}
+                    <input type="hidden" name='productid' value='{{product.id}}'>
+                    <input type="hidden" name="remove" value="remove">
+                    <button class="remove1" type="submit" value="Remove">Remove</button>
+                    </form> 
+                </div>
+              </div>
+            </td>
+            <td>
+              
+              <center>{{ product|cart_quantity:request.session.cart }}</center>
+               <form action="/Shoppingcart" method="post">
+                {% csrf_token %}
+                <input  type="hidden" name='productid' value="{{product.id}}">
+                <center><input class="button" type="submit" value="+"></center>
+                </form> 
+               
+              </td>
+              
+            <td>Rs.{{ product|product_total:request.session.cart }}</td>
+          </tr>
+        {% endfor %}
+      </table>
+
+      <div class="total-price">
+        <table>
+          <tr>
+            <td>GST</td>
+              <td><strong>Rs.{{ products|gst_total:request.session.cart }}</strong></td> 
+          </tr>
+          <tr>
+           
+            <td>DISCOUNT</td>
+              <td><strong>Rs.{{ products|discount:request.session.cart }}</strong></td> 
+            
+          </tr>
+          <tr>
+           
+            <td><strong>TOTAL</strong></td>
+              <td><strong>Rs.{{ products|totat_price:request.session.cart }}</strong></td> 
+            
+          </tr>
+          
+        </table>
+
+        
+      </div>
+      
+
+      <div class="container">
+      <a href="/Billing-Address"><button  type="submit" class="checkout">checkout</button>
+    </div>
+    
+    </div>
+
+    <!-- Create footer of E-commerce Website -->
+    <div class="footer">
+      <div class="container">
+        <div class="row">
+          <div class="footer-col-1">
+            <h3>Help and Information</h3>
+            <ul>
+              <li>Help</li>
+              <li>Track Order</li>
+              <li>Delivery & returns</li>
+            </ul>
+          </div>
+
+          <div class="footer-col-2">
+            <img src="../static/AttireHillLogo/logoFooter.png" />
+            <p>Our Mission is to Thoughtfully Curate Timeless Fashion that Elevates Style and Comfort.</p>
+          </div>
+
+          <div class="footer-col-3">
+            <h3>Useful Links</h3>
+            <ul>
+              <li>Coupons</li>
+              <li>Blog Post</li>
+              <li>Return Policy</li>
+              <li>Join Affiliate</li>
+            </ul>
+          </div>
+
+          <div class="footer-col-4">
+            <h3>Follow Us</h3>
+            <ul>
+              <li>Facebook</li>
+              <li>Twitter</li>
+              <li>Instagram</li>
+              <li>YouTube</li>
+            </ul>
+          </div>
+        </div>
+
+        <hr />
+        <p class="copyright">Copyright 2024</p>
+      </div>
+    </div>
+
+    <!-- -js for toggle menu -->
+    <script>
+      var MenuItems = document.getElementById('MenuItems')
+      
+      MenuItems.style.maxHeight = '0px'
+      
+      function menutoggle() {
+        if (MenuItems.style.maxHeight == '0px') {
+          MenuItems.style.maxHeight = '200px'
+        } else {
+          MenuItems.style.maxHeight = '0px'
+        }
+      }
+    </script>
+    <script>
+      function placed_order() {
+        
+        window.location.href = 'Billing-Address.html';
+      }
+      
+        
+        
+      
+    </script>
+  </body>
+</html>

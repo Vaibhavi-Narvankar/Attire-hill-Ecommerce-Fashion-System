@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Checkout</title>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Load a font called Roboto from Google Fonts. -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+
+  <!-- Here are the CSS files for this page. -->
+  <link rel="stylesheet" href="/static/general.css">
+  <link rel="stylesheet" href="/static/checkout.css">
+  <link rel="stylesheet" href="/static/checkout-header.css">
+</head>
+
+<body>
+  <div class="checkout-header">
+    <div class="header-content">
+      <div class="checkout-header-left-section">
+        <a href="home">
+          <img class="dress-logo" src="../static/AttireHillLogo/logo.jpg">
+        </a>
+      </div>
+
+      <div class="checkout-header-middle-section">
+        Checkout (<a class="return-to-home-link" href="home">3 items</a>)
+      </div>
+
+      <div class="checkout-header-right-section">
+        <img src="/static/orderImages/lock-icon.png">
+      </div>
+    </div>
+  </div>
+
+  <div class="main">
+    <div class="page-title">Review your order</div>
+
+    <div class="checkout-grid">
+      <div class="order-summary js-order-summary">
+        <div class="cart-item-container">
+          <div class="delivery-date">Delivery date: Sunday, April 7</div>
+          <div class="cart-item-details-grid">
+            <img src="/static/ordersImages/buy1.jpg" alt="cloth img">
+            <div class="cart-item-details">
+              <div class="product-name">Knit Chunky Pullover Short Sweater Dress</div>
+              <div class="product-price">$20.34</div>
+              <div class="product-quantity"><span>Quantity:<span class="quantity-label">2</span></span>
+                <span class="update-quantity-link link-primary">Update</span>
+                <span class="delete-quantity-link link-primary js-delete-link">Delete</span>
+              </div>
+            </div>
+            <div class="delivery-options">
+              <div class="delivery-options-title">Choose a delivery Option:</div>
+              <div class="delivery-option">
+                <input type="radio" name="delivery-option" value="option1" checked class="delivery-option-input">
+                <div class="delivery-option-date">Sunday, April 7
+                  <div class="delivery-option-price">FREE Shipping
+                  </div>
+                </div>
+
+                <input type="radio" name="delivery-option" value="option2" class="delivery-option-input">
+                <div class="delivery-option-date">Sunday, April 14
+                  <div class="delivery-option-price">$5 Shipping
+                  </div>
+                </div>
+
+                <input type="radio" name="delivery-option" value="option3" class="delivery-option-input">
+                <div class="delivery-option-date">Sunday, April 21
+                  <div class="delivery-option-price">$10 Shipping
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="cart-item-container">
+          <div class="delivery-date">Delivery date: Sunday, April 7</div>
+          <div class="cart-item-details-grid">
+            <img src="/static/ordersImages/buy2.jpg" alt="cloth img">
+            <div class="cart-item-details">
+              <div class="product-name">Off white full-sleeve top</div>
+              <div class="product-price">$20.34</div>
+              <div class="product-quantity"><span>Quantity:<span class="quantity-label">2</span></span>
+                <span class="update-quantity-link link-primary">Update</span>
+                <span class="delete-quantity-link link-primary js-delete-link">Delete</span>
+              </div>
+            </div>
+            <div class="delivery-options">
+              <div class="delivery-options-title">Choose a delivery Option:</div>
+              <div class="delivery-option">
+                <input type="radio" name="delivery-option" value="option1" checked class="delivery-option-input">
+                <div class="delivery-option-date">Sunday, April 7
+                  <div class="delivery-option-price">FREE Shipping
+                  </div>
+                </div>
+
+                <input type="radio" name="delivery-option" value="option2" class="delivery-option-input">
+                <div class="delivery-option-date">Sunday, April 14
+                  <div class="delivery-option-price">$5 Shipping
+                  </div>
+                </div>
+
+                <input type="radio" name="delivery-option" value="option3" class="delivery-option-input">
+                <div class="delivery-option-date">Sunday, April 21
+                  <div class="delivery-option-price">$10 Shipping
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+        <div class="cart-item-container">
+          <div class="delivery-date">Delivery date: Sunday, April 7</div>
+          <div class="cart-item-details-grid">
+            <img src="/static/ordersImages/buy3.jpg" alt="cloth img">
+            <div class="cart-item-details">
+              <div class="product-name">Voilet cutside gown</div>
+              <div class="product-price">$20.34</div>
+              <div class="product-quantity"><span>Quantity:<span class="quantity-label">2</span></span>
+                <span class="update-quantity-link link-primary">Update</span>
+                <span class="delete-quantity-link link-primary js-delete-link">Delete</span>
+              </div>
+            </div>
+            <div class="delivery-options">
+              <div class="delivery-options-title">Choose a delivery Option:</div>
+              <div class="delivery-option">
+                <input type="radio" name="delivery-option" value="option1" checked class="delivery-option-input">
+                <div class="delivery-option-date">Sunday, April 7
+                  <div class="delivery-option-price">FREE Shipping
+                  </div>
+                </div>
+
+                <input type="radio" name="delivery-option" value="option2" class="delivery-option-input">
+                <div class="delivery-option-date">Sunday, April 14
+                  <div class="delivery-option-price">$5 Shipping
+                  </div>
+                </div>
+
+                <input type="radio" name="delivery-option" value="option3" class="delivery-option-input">
+                <div class="delivery-option-date">Sunday, April 21
+                  <div class="delivery-option-price">$10 Shipping
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+
+
+      <div class="payment-summary js-payment-summary">
+        <div class="payment-summary-title">Order Summary</div>
+        <div class="payment-summary-row">Items(3)
+          <div class="payment-summary-money">$45.55</div>
+        </div>
+        <div class="payment-summary-row">Shipping & handling
+          <div class="payment-summary-money">$0.0</div>
+        </div>
+        <div class="payment-summary-row subtotal-row">Total before tax:
+          <div class="payment-summary-money">$56.55</div>
+        </div>
+        <div class="payment-summary-row">Estimated tax (10%):
+          <div class="payment-summary-money">$8.45</div>
+        </div>
+        <div class="payment-summary-row total-row">Order total:
+          <div class="payment-summary-money">$56.54</div>
+        </div>
+        <button class="place-order-button button-primary">place your order</button>
+
+      </div>
+    </div>
+  </div>
+  </div>
+</body>
+
+</html>

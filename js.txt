@@ -1,0 +1,60 @@
+<!-------------------js for toggle Form------->
+  {% comment %} <script>
+
+    var LoginForm = document.getElementById("LoginForm");
+    var RegForm = document.getElementById("RegForm");
+    var Indicator = document.getElementById("Indicator");
+
+    function register() {
+      RegForm.style.transform = "translateX(0px)";
+      LoginForm.style.transform = "translateX(0px)";
+      Indicator.style.transform = "translateX(100px)";
+    }
+
+    function login() {
+      RegForm.style.transform = "translateX(300px)";
+      LoginForm.style.transform = "translateX(300px)";
+      Indicator.style.transform = "translateX(0px)";
+    }
+
+    function registerUser() {
+      var regUsername = document.getElementById("regUsername").value;
+      var regEmail = document.getElementById("regEmail").value;
+      var regPassword = document.getElementById("regPassword").value;
+
+      // Check if the user already exists in local storage
+      if (localStorage.getItem(regUsername)) {
+        alert("Username already exists. Please choose a different one.");
+        return;
+      }
+
+      // Store user information in local storage
+      localStorage.setItem(regUsername, JSON.stringify({ email: regEmail, password: regPassword }));
+      alert("Registration successful. You can now log in.");
+    }
+
+    function loginUser() {
+      var loginUsername = document.getElementById("loginUsername").value;
+      var loginPassword = document.getElementById("loginPassword").value;
+
+      // Check if the user exists in local storage
+      var userData = localStorage.getItem(loginUsername);
+      if (!userData) {
+        alert("User not found. Please register.");
+        return;
+      }
+
+      // Parse stored user data
+      userData = JSON.parse(userData);
+
+      // Check if the entered password matches the stored password
+      if (loginPassword !== userData.password) {
+        alert("Incorrect password. Please try again.");
+        return;
+      }
+
+      alert("Login successful. Welcome, " + loginUsername + "!");
+      // You can redirect the user to a dashboard or another page here
+    }
+
+  </script> {% endcomment %}
